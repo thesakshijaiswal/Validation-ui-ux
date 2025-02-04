@@ -46,7 +46,6 @@
   left: 0;
   width: 50%;
   height: 80%;
-  background: #ff2;
 }
 .right-top {
   right: 0;
@@ -55,20 +54,45 @@
   background: #000;
 }
 
+.heading-top {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60%, -190%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
 @media (max-width: 768px) {
+  .container-bg::before {
+    transform: scaleX(2.3);
+  }
+
   .container {
     flex-direction: column;
     height: auto;
   }
+
   .left-top,
   .right-top {
     width: 100%;
     height: 50vh;
   }
+
   .right-top {
     top: 50%;
   }
-  .container-bg::before {
-    transform: scaleX(2.3);
+
+  .heading-top {
+    transform: translate(-50%, -300%);
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .heading-top {
+    transform: translate(-50%, -280%);
+    font-size: 1.8rem;
   }
 }
