@@ -80,12 +80,14 @@
 .content-list li {
   font-weight: 700;
   font-size: 1.2rem;
+  margin-bottom: 5px;
 }
 
 .content-list p {
   font-weight: 200;
   font-size: 1rem;
   white-space: nowrap;
+  margin-bottom: 14px;
 }
 
 @media (max-width: 768px) {
@@ -111,7 +113,7 @@
     width: 400px;
   }
   .heading-top {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
   }
   .content-list {
