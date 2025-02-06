@@ -37,7 +37,6 @@
 .right-top {
   flex: 1;
   position: absolute;
-  top: 0;
 }
 
 .left-top {
@@ -47,10 +46,11 @@
   justify-content: center;
   height: 80%;
   width: 50%;
+  top: -5%;
 }
 .right-top {
   right: 0;
-  top: 20%;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,11 +97,13 @@
 }
 
 .form-container {
-  height: 100%;
-  min-height: 600px;
+  height: 80%;
   background: blanchedalmond;
   min-width: 440px;
   padding: 30px 20px;
+}
+.card{
+  height: 80vh;
 }
 @media (max-width: 768px) {
   
@@ -116,6 +118,9 @@
   .right-top {
     width: 100%;
     height: 50vh;
+  }
+  .left-top{
+    top: 6%;
   }
   .right-top {
     top: 60%;
@@ -142,7 +147,8 @@
   }
   .form-container {
     width: 60%;
-    height: 50%;
+    min-width: 280px;
+    height: 100%;
   }
 }
 
