@@ -8,41 +8,116 @@
   </head>
   <body>
     <section>
-      <div class="container-bg">
-      </div>
-        <div class="container">
-          <div class="left-top">
-            <div class="content-top">
-              <h3 class="heading-top">
-                Lorem ipsum dolor sit amet, <br />consectetur
-              </h3>
-              <ul class="content-list">
-                <li>Lorem ipsum dolor sit amet</li>
-                <p>You can use an Emoji for the circular bullet icon.</p>
-                <li>Lorem ipsum dolor sit amet</li>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
-                </p>
-                <li>Lorem ipsum dolor sit amet</li>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
-                </p>
-                <li>Lorem ipsum dolor sit amet</li>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
-                </p>
-              </ul>
-            </div>
-          </div>
-          <div class="right-top">
-            <div class="form-container">
-              <form action="#">
-                <h3 class="heading-form">Lorem ipsum dolor</h3>
-              </form>
-            </div>
+      <div class="container-bg"></div>
+      <div class="container">
+        <div class="left-top">
+          <div class="content-top">
+            <h3 class="heading-top">
+              Lorem ipsum dolor sit amet, <br />consectetur
+            </h3>
+            <ul class="content-list">
+              <li>Lorem ipsum dolor sit amet</li>
+              <p>You can use an Emoji for the circular bullet icon.</p>
+              <li>Lorem ipsum dolor sit amet</li>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
+              </p>
+              <li>Lorem ipsum dolor sit amet</li>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
+              </p>
+              <li>Lorem ipsum dolor sit amet</li>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipiscing elit dolor.
+              </p>
+            </ul>
           </div>
         </div>
+        <div class="right-top">
+          <div class="form-container">
+            <form action="#">
+              <h3 class="form-heading">Lorem ipsum dolor</h3>
+              <div class="input-fields">
+                <div class="field">
+                  <label for="email">Email<sup>*</sup></label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label>Preferred Demo Date<sup>*</sup></label>
+                  <div class="inline-inputs">
+                    <input
+                      type="number"
+                      name="day"
+                      min="1"
+                      max="31"
+                      placeholder="Date"
+                      required
+                    />
+                    <select name="month" required>
+                      <option value="" disabled selected>Month</option>
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                    <select name="year" required>
+                      <option value="" disabled selected>Year</option>
+                      <script>
+                        let currentYear = new Date().getFullYear();
+                        for (let i = currentYear; i >= currentYear - 100; i--) {
+                          document.write(`<option value="${i}">${i}</option>`);
+                        }
+                      </script>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="department">Your Department<sup>*</sup></label>
+                  <select id="department" name="department" required>
+                    <option value="" disabled selected>
+                      Select Department
+                    </option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="review"
+                    >Which product would you like to take demo for?</label
+                  >
+                  <textarea
+                    id="review"
+                    name="review"
+                    rows="4"
+                    cols="20"
+                    placeholder="Tell us more about your requirements..."
+                    required
+                  ></textarea>
+                </div>
 
+                <button id="submit" type="submit">Request a Demo</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="card"></section>
   </body>
