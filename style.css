@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.hero {
+  height: 100vh;
+}
+
 .container-bg {
   position: relative;
   width: 100%;
@@ -180,7 +184,7 @@ select {
   width: 20px;
   height: 20px;
   top: 4px;
-  border: 2px solid #8012C0;
+  border: 2px solid #8012c0;
   border-radius: 50%;
   position: relative;
   display: inline-block;
@@ -189,7 +193,7 @@ select {
   content: "";
   width: 10px;
   height: 10px;
-  background: #8012C0;
+  background: #8012c0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -197,9 +201,108 @@ select {
   border-radius: 50%;
 }
 
-.card {
+.card-section {
   height: 80vh;
 }
+
+.card-section .section-intro {
+  background: linear-gradient(
+    89.95deg,
+    #5776cc 0.01%,
+    #9830cc 24.84%,
+    #4c0783 47.29%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+.heading-wrapper {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 2%;
+}
+
+.card {
+  position: relative;
+  width: 560px;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overlay1, .overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  padding: 20px;
+  transition: 0.3s ease-in-out;
+}
+.overlay1{
+  background: linear-gradient(transparent, #5329c7);
+}
+.overlay2{
+  background: linear-gradient(#5329c78e, #5329c7cb);
+}
+.overlay1 h3, .overlay2 h3{
+  padding-bottom: 20px;
+  font-weight: 800;
+}
+
+.overlay1 h3::before {
+  content: "Default State";
+}
+.overlay1 p::before {
+  content: "This is default statue of the card, use an image as <img> tag and add gradient overlay and text over it.";
+}
+
+.card:hover .overlay1 h3::before {
+  content: "Hover State";
+}
+.card:hover .overlay1 p::before {
+  content: "This is the hover state of the first card; both cards should appear like this when the user hovers over them.";
+}
+
+.overlay2 h3::before {
+  content: "Hover State";
+}
+.overlay2 p::before {
+  content: "This is the hover state of the first card; both cards should appear like this when the user hovers over them.";
+}
+
+.card:hover .overlay2 h3::before {
+  content: "Default State";
+}
+.card:hover .overlay2 p::before {
+  content: "This is default statue of the card, use an image as <img> tag and add gradient overlay and text over it.";
+}
+
 @media (max-width: 768px) {
   .container-bg::before {
     transform: scaleX(2.3);
@@ -278,6 +381,24 @@ select {
     width: 18px;
     height: 18px;
   }
+  .card-section {
+    margin-top: 50%;
+  }
+  .heading-wrapper {
+    align-items: center;
+    width: 100%;
+    padding-left: 0;
+  }
+  .card-section .section-intro {
+    font-size: 1.2rem;
+  }
+  .card-wrapper {
+    flex-direction: column;
+  }
+  .card {
+    width: auto;
+    height: 250px;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -313,5 +434,10 @@ select {
   .field label {
     font-weight: 500;
     font-size: 0.9rem;
+  }
+  .heading-wrapper {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 4rem;
   }
 }
