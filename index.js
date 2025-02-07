@@ -55,14 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
     return isValid;
   };
 
-  
   emailInput.addEventListener("blur", validateEmail);
   day.addEventListener("blur", validateDate);
   month.addEventListener("blur", validateDate);
   year.addEventListener("blur", validateDate);
   departmentSelect.addEventListener("blur", validateDepartment);
 
-  
   emailInput.addEventListener("input", validateEmail);
   departmentSelect.addEventListener("change", validateDepartment);
 

@@ -89,14 +89,11 @@
   padding-right: 35px;
 }
 
-.content-list {
-  padding-left: 1.2rem;
-}
-
 .content-list li {
   font-weight: 700;
   font-size: 1.2rem;
   margin-bottom: 5px;
+  list-style: none;
 }
 
 .content-list p {
@@ -104,6 +101,12 @@
   font-size: 1rem;
   white-space: nowrap;
   margin-bottom: 14px;
+}
+
+.content-list li::before {
+  content: "😎";
+  font-size: 1.1em;
+  margin-right: 5px;
 }
 
 .form-container {
@@ -411,10 +414,6 @@ input[type="number"]::-webkit-outer-spin-button {
   .heading-top {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-  }
-
-  .content-list {
-    padding-left: 1.2rem;
   }
 
   .content-list li {
