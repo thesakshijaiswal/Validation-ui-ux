@@ -5,6 +5,8 @@
   padding: 0;
   font-family: "Inter", serif;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #5329c7 #f0efef;
 }
 
 .hero {
@@ -52,6 +54,7 @@
   width: 50%;
   top: -5%;
 }
+
 .right-top {
   right: 0;
   top: 0;
@@ -62,6 +65,7 @@
   height: 100%;
   width: 50%;
 }
+
 .content-top {
   display: flex;
   flex-direction: column;
@@ -84,6 +88,7 @@
   margin-bottom: 1rem;
   padding-right: 35px;
 }
+
 .content-list {
   padding-left: 1.2rem;
 }
@@ -139,6 +144,33 @@ select {
   padding: 10px 15px;
   border-radius: 10px;
   color: #6d6d6d;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.custom-select .arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.8rem;
+  color: #333;
 }
 
 /* for date field*/
@@ -177,21 +209,26 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 8px;
   box-sizing: border-box;
 }
+
 .radio-group {
   display: flex;
   flex-direction: column;
 }
+
 .options {
   padding-top: 8px;
   display: flex;
   gap: 20px;
 }
+
 .options > label {
   font-size: 0.9rem;
 }
+
 .options input[type="radio"] {
   display: none;
 }
+
 .custom-radio {
   width: 20px;
   height: 20px;
@@ -201,6 +238,7 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
   display: inline-block;
 }
+
 .options input[type="radio"]:checked + .custom-radio::after {
   content: "";
   width: 10px;
@@ -221,6 +259,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .card-section {
   height: 80vh;
 }
@@ -266,13 +305,14 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.overlay1,
-.overlay2 {
+
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -285,104 +325,131 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 20px;
   transition: 0.3s ease-in-out;
 }
-.overlay1 {
-  background: linear-gradient(transparent, #5329c7);
+
+.overlay {
+  background: linear-gradient(0deg, rgba(83, 41, 199, 1) 0%, transparent 55%);
 }
-.overlay2 {
+
+.card:hover .overlay {
   background: linear-gradient(#5329c78e, #5329c7cb);
 }
-.overlay1 h3,
-.overlay2 h3 {
+
+.overlay h3 {
   padding-bottom: 20px;
   font-weight: 800;
 }
 
-.overlay1 h3::before {
+.overlay h3::before {
   content: "Default State";
 }
-.overlay1 p::before {
+
+.overlay p::before {
   content: "This is default statue of the card, use an image as <img> tag and add gradient overlay and text over it.";
 }
 
-.card:hover .overlay1 h3::before {
+.card:hover .overlay h3::before {
   content: "Hover State";
 }
-.card:hover .overlay1 p::before {
+
+.card:hover .overlay p::before {
   content: "This is the hover state of the first card; both cards should appear like this when the user hovers over them.";
 }
 
-.overlay2 h3::before {
-  content: "Hover State";
-}
-.overlay2 p::before {
-  content: "This is the hover state of the first card; both cards should appear like this when the user hovers over them.";
+/*-------------Custom scrollbar styling---------------*/
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-.card:hover .overlay2 h3::before {
-  content: "Default State";
-}
-.card:hover .overlay2 p::before {
-  content: "This is default statue of the card, use an image as <img> tag and add gradient overlay and text over it.";
+::-webkit-scrollbar-track {
+  background: #5329c7;
+  border-radius: 5px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: #5329c7;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5329c7;
+}
+
+/*--------Styling for small screen devices-------*/
 @media (max-width: 768px) {
   .container-bg::before {
     transform: scaleX(2.3);
   }
+
   .container {
     flex-direction: column;
     height: auto;
   }
+
   .left-top,
   .right-top {
     width: 100%;
     height: 50vh;
   }
+
   .left-top {
     top: 6%;
   }
+
   .right-top {
     top: 60%;
   }
+
   .content-top {
     align-items: flex-start;
     bottom: 10%;
     padding: 1.5rem;
     width: 400px;
   }
+
   .heading-top {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
+
   .content-list {
     padding-left: 1.2rem;
   }
+
   .content-list li {
     font-size: 0.8rem;
   }
+
   .content-list p {
     font-size: 0.7rem;
     white-space: normal;
   }
+
   .form-container {
     width: 60%;
     min-width: 280px;
     height: auto;
   }
+
   .form-heading {
     font-size: 1rem;
   }
+
   .input-fields {
     padding-top: 10px;
     gap: 15px;
   }
+
   .field {
     gap: 3px;
   }
+
   .field label {
     font-weight: 500;
     font-size: 0.8rem;
   }
+
   .field input,
   textarea,
   select {
@@ -390,78 +457,120 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 6px;
     font-size: 0.7rem;
   }
+
   #submit {
     padding: 10px 15px;
     border-radius: 56px;
     font-size: 0.8rem;
   }
+
   .inline-inputs input,
   .inline-inputs select {
     padding: 5px;
   }
+
   .custom-radio {
     width: 18px;
     height: 18px;
   }
+
   .card-section {
     margin-top: 50%;
   }
+
   #error-message-date,
   #error-message-email,
   #error-message-dept {
     font-size: 0.7rem;
   }
+
   .heading-wrapper {
     align-items: center;
     width: 100%;
     padding-left: 0;
   }
+
   .card-section .section-intro {
     font-size: 1.2rem;
   }
+
   .card-wrapper {
     flex-direction: column;
   }
+
   .card {
     width: auto;
     height: 250px;
   }
+
+  .overlay1 h3,
+  .overlay2 h3 {
+    padding-bottom: 20px;
+    font-weight: 800;
+  }
+
+  .overlay1 h3,
+  .overlay2 h3 {
+    padding-bottom: 10px;
+    font-weight: 800;
+    font-size: 0.9rem;
+  }
+
+  .overlay1 p,
+  .overlay2 p {
+    font-size: 0.8rem;
+  }
+
+  .custom-select .arrow {
+    font-size: 0.6rem;
+  }
 }
+
+/*--------Styling for mid size screen devices-------*/
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .content-top {
     align-items: center;
     padding-left: 0%;
   }
+
   .heading-top {
     font-size: 1.5rem;
     margin-bottom: 1rem;
   }
+
   .content-list {
     padding-left: 1.4rem;
   }
+
   .content-list li {
     font-size: 1.1rem;
   }
+
   .content-list p {
     font-size: 0.8rem;
     white-space: normal;
   }
+
   .form-container {
     width: 90%;
     min-width: 360px;
   }
+
   .input-fields {
     padding-top: 10px;
     gap: 20px;
   }
+
   .field {
     gap: 4px;
   }
+
   .field label {
     font-weight: 500;
     font-size: 0.9rem;
   }
+
   .heading-wrapper {
     width: 100%;
     justify-content: flex-start;
