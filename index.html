@@ -41,40 +41,38 @@
                 <div class="field">
                   <label for="email">Email<sup>*</sup></label>
                   <input
-                    type="email"
+                    type="text"
                     id="email"
                     name="email"
                     placeholder="Enter your email"
-                    required
                   />
+                  <p id="error-message-email">Please enter a valid email</p>
                 </div>
                 <div class="field">
                   <label>Preferred Demo Date<sup>*</sup></label>
                   <div class="inline-inputs">
                     <input
                       type="number"
+                      id="day"
                       name="day"
-                      min="1"
-                      max="31"
                       placeholder="Date"
-                      required
                     />
-                    <select name="month" required>
+                    <select id="month" name="month">
                       <option value="" disabled selected>Month</option>
-                      <option value="January">January</option>
-                      <option value="February">February</option>
-                      <option value="March">March</option>
-                      <option value="April">April</option>
-                      <option value="May">May</option>
-                      <option value="June">June</option>
-                      <option value="July">July</option>
-                      <option value="August">August</option>
-                      <option value="September">September</option>
-                      <option value="October">October</option>
-                      <option value="November">November</option>
-                      <option value="December">December</option>
+                      <option value="1">January</option>
+                      <option value="2">February</option>
+                      <option value="3">March</option>
+                      <option value="4">April</option>
+                      <option value="5">May</option>
+                      <option value="6">June</option>
+                      <option value="7">July</option>
+                      <option value="8">August</option>
+                      <option value="9">September</option>
+                      <option value="10">October</option>
+                      <option value="11">November</option>
+                      <option value="12">December</option>
                     </select>
-                    <select name="year" required>
+                    <select id="year" name="year">
                       <option value="" disabled selected>Year</option>
                       <script>
                         let currentYear = new Date().getFullYear();
@@ -84,10 +82,11 @@
                       </script>
                     </select>
                   </div>
+                  <p id="error-message-date">Please enter valid date</p>
                 </div>
                 <div class="field">
                   <label for="department">Your Department<sup>*</sup></label>
-                  <select id="department" name="department" required>
+                  <select id="department" name="department">
                     <option value="" disabled selected>
                       Select Department
                     </option>
@@ -97,6 +96,7 @@
                     <option value="Marketing">Marketing</option>
                     <option value="Sales">Sales</option>
                   </select>
+                  <p id="error-message-dept">Please enter a valid Dept</p>
                 </div>
                 <div class="field">
                   <label for="review"
@@ -108,7 +108,6 @@
                     rows="4"
                     cols="20"
                     placeholder="Tell us more about your requirements..."
-                    required
                   ></textarea>
                 </div>
 
@@ -145,24 +144,25 @@
     </section>
     <section class="card-section">
       <div class="heading-wrapper">
-      <h3 class="section-intro">Lorem ipsum dolor sit amet</h3>
+        <h3 class="section-intro">Lorem ipsum dolor sit amet</h3>
       </div>
       <div class="card-wrapper">
         <div class="card">
-          <img src="./assets/cartoons.png" alt="Image">
+          <img src="./assets/cartoons.png" alt="Image" />
           <div class="overlay1">
-              <h3></h3>
-              <p></p>
+            <h3></h3>
+            <p></p>
           </div>
-      </div>
-      <div class="card">
-          <img src="./assets/cartoons.png" alt="Image">
+        </div>
+        <div class="card">
+          <img src="./assets/cartoons.png" alt="Image" />
           <div class="overlay2">
-              <h3></h3>
-              <p></p>
+            <h3></h3>
+            <p></p>
           </div>
-      </div>
+        </div>
       </div>
     </section>
+    <script src="index.js"></script>
   </body>
 </html>

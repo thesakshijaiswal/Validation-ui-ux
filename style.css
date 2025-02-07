@@ -118,7 +118,7 @@
   padding-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .field {
@@ -139,6 +139,18 @@ select {
   padding: 10px 15px;
   border-radius: 10px;
   color: #6d6d6d;
+}
+
+/* for date field*/
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #submit {
@@ -201,6 +213,14 @@ select {
   border-radius: 50%;
 }
 
+#error-message-date,
+#error-message-email,
+#error-message-dept {
+  color: #eb5757;
+  display: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
 .card-section {
   height: 80vh;
 }
@@ -251,7 +271,8 @@ select {
   height: 100%;
   object-fit: cover;
 }
-.overlay1, .overlay2 {
+.overlay1,
+.overlay2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -264,13 +285,14 @@ select {
   padding: 20px;
   transition: 0.3s ease-in-out;
 }
-.overlay1{
+.overlay1 {
   background: linear-gradient(transparent, #5329c7);
 }
-.overlay2{
+.overlay2 {
   background: linear-gradient(#5329c78e, #5329c7cb);
 }
-.overlay1 h3, .overlay2 h3{
+.overlay1 h3,
+.overlay2 h3 {
   padding-bottom: 20px;
   font-weight: 800;
 }
@@ -383,6 +405,11 @@ select {
   }
   .card-section {
     margin-top: 50%;
+  }
+  #error-message-date,
+  #error-message-email,
+  #error-message-dept {
+    font-size: 0.7rem;
   }
   .heading-wrapper {
     align-items: center;
