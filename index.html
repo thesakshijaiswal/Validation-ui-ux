@@ -24,12 +24,12 @@
     />
   </head>
   <body>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
       <div class="container-bg"></div>
       <div class="container">
         <div class="left-top">
           <div class="content-top">
-            <h3 class="heading-top">
+            <h3 class="heading-top" id="hero-heading">
               Lorem ipsum dolor sit amet, <br />consectetur
             </h3>
             <ul class="content-list">
@@ -52,29 +52,51 @@
         </div>
         <div class="right-top">
           <div class="form-container">
-            <form action="#">
-              <h3 class="form-heading">Lorem ipsum dolor</h3>
+            <form
+              action="#"
+              id="demo-form"
+              aria-labelledby="form-heading"
+              novalidate
+            >
+              <h3 class="form-heading" id="form-heading">Lorem ipsum dolor</h3>
               <div class="input-fields">
                 <div class="field">
                   <label for="email">Email<sup>*</sup></label>
                   <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     placeholder="Enter your email"
+                    aria-describedby="error-message-email"
+                    required
                   />
-                  <p id="error-message-email">Please enter a valid email</p>
+                  <p
+                    id="error-message-email"
+                    class="error-message"
+                    role="alert"
+                  >
+                    Please enter a valid email
+                  </p>
                 </div>
                 <div class="field">
-                  <label>Preferred Demo Date<sup>*</sup></label>
+                  <label for="preferred-date"
+                    >Preferred Demo Date<sup>*</sup></label
+                  >
                   <div class="inline-inputs">
                     <input
                       type="number"
                       id="day"
                       name="day"
                       placeholder="Date"
+                      aria-label="Day of the month"
+                      required
                     />
-                    <select id="month" name="month">
+                    <select
+                      id="month"
+                      name="month"
+                      aria-label="Select Month"
+                      required
+                    >
                       <option value="" disabled selected>Month</option>
                       <option value="1">January</option>
                       <option value="2">February</option>
@@ -89,7 +111,12 @@
                       <option value="11">November</option>
                       <option value="12">December</option>
                     </select>
-                    <select id="year" name="year">
+                    <select
+                      id="year"
+                      name="year"
+                      aria-label="Select Year"
+                      required
+                    >
                       <option value="" disabled selected>Year</option>
                       <script>
                         let currentYear = new Date().getFullYear();
@@ -99,12 +126,19 @@
                       </script>
                     </select>
                   </div>
-                  <p id="error-message-date">Please enter valid date</p>
+                  <p id="error-message-date" class="error-message" role="alert">
+                    Please enter a valid date
+                  </p>
                 </div>
                 <div class="field">
                   <label for="department">Your Department<sup>*</sup></label>
                   <div class="custom-select">
-                    <select id="department" name="department">
+                    <select
+                      id="department"
+                      name="department"
+                      aria-label="Select Department"
+                      required
+                    >
                       <option value="" disabled selected>
                         Select Department
                       </option>
@@ -116,7 +150,9 @@
                     </select>
                     <span class="arrow">▼</span>
                   </div>
-                  <p id="error-message-dept">Please enter a valid Dept</p>
+                  <p id="error-message-dept" class="error-message" role="alert">
+                    Please enter a valid department
+                  </p>
                 </div>
                 <div class="field">
                   <label for="review"
@@ -128,12 +164,13 @@
                     rows="4"
                     cols="20"
                     placeholder="Tell us more about your requirements..."
+                    aria-label="Product demo request"
                   ></textarea>
                 </div>
 
                 <div class="field">
                   <div class="radio-group">
-                    <label for="review">How did you hear about the us?</label>
+                    <legend>How did you hear about us?</legend>
                     <div class="options">
                       <label>
                         <input
@@ -155,26 +192,30 @@
                   </div>
                 </div>
 
-                <button id="submit" type="submit">Request a Demo</button>
+                <button id="submit" type="submit" aria-label="Request a Demo">
+                  Request a Demo
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
     </section>
-    <section class="card-section">
+    <section class="card-section" aria-labelledby="card-section-heading">
       <div class="heading-wrapper">
-        <h3 class="section-intro">Lorem ipsum dolor sit amet</h3>
+        <h3 class="section-intro" id="card-section-heading">
+          Lorem ipsum dolor sit amet
+        </h3>
       </div>
       <div class="card-wrapper">
-        <div class="card">
+        <div class="card" role="img" aria-label="Cartoon image 1">
           <img src="./assets/cartoons.png" alt="Image" />
           <div class="overlay">
             <h3></h3>
             <p></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card" role="img" aria-label="Cartoon image 2">
           <img src="./assets/cartoons.png" alt="Image" />
           <div class="overlay">
             <h3></h3>
